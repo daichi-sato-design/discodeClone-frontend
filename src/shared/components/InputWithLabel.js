@@ -12,7 +12,8 @@ const Label = styled('p')({
   color: '#b9bbbe',
   textTransform: 'uppercase',
   fontWeight: '600',
-  fontSize: '16px',
+  fontSize: '13px',
+  margin: '16px 0 8px',
 });
 
 const Input = styled('input')({
