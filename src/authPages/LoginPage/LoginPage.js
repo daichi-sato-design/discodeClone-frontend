@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import AuthBox from '../../shared/components/AuthBox';
-
 import LoginPageFooter from './LoginPageFooter';
 import LoginPageHeader from './LoginPageHeader';
 import LoginPageInputs from './LoginPageInputs';
-
 import { validateLoginForm } from '../../shared/utils/validators';
+import { connect } from 'react-redux';
+import { getActions } from '../../store/actions/authActions';
+import { useNavigate } from 'react-router-dom';
 
-const LoginPage = () => {
+const LoginPage = ({ login }) => {
+  const navigate = useNavigate();
   const [mail, setMail] = useState('');
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
@@ -17,8 +19,11 @@ const LoginPage = () => {
   }, [mail, password, setIsFormValid]);
 
   const handleLogin = () => {
-    console.log({ mail, password });
-    console.log('login');
+    const userDetails = {
+      mail,
+      password,
+    };
+    login(userDetails, navigate);
   };
 
   return (
@@ -35,4 +40,10 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+const mapActionsToProps = (dispatch) => {
+  return {
+    ...getActions(dispatch),
+  };
+};
+
+export default connect(null, mapActionsToProps)(LoginPage);
