@@ -7,13 +7,15 @@ const LoginPageHeader = () => {
       <Typography
         variant="h5"
         sx={{
+          fontSize: '20px',
+          fontWeight: '600',
           color: '#fff',
         }}
       >
-        Welcome Back!
+        お帰りなさい！
       </Typography>
-      <Typography sx={{ color: '#b9bbbe' }}>
-        We are happy that you are with us!
+      <Typography sx={{ fontSize: '14px', color: '#b9bbbe' }}>
+        あなたが私たちと一緒にいることを嬉しく思います！
       </Typography>
     </>
   );

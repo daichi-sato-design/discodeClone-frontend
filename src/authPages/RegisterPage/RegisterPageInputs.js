@@ -16,21 +16,21 @@ const RegisterPageInputs = ({
         setValue={setMail}
         label="E-mail address"
         type="text"
-        placeholder="Enter e-mail address"
+        placeholder="メールアドレス"
       />
       <InputWithLabel
         value={username}
         setValue={setUsername}
         label="Username"
         type="text"
-        placeholder="Enter a username"
+        placeholder="ユーザーネーム"
       />
       <InputWithLabel
         value={password}
         setValue={setPassword}
         label="Password"
         type="password"
-        placeholder="Enter a password"
+        placeholder="パスワード"
       />
     </>
   );

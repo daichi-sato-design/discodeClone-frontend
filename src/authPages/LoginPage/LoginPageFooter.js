@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { Tooltip } from '@mui/material';
 
 const getFormNotValidMessage = () => {
-  return 'Enter corrent e-mail address and password should contains between 6 and 12 characters';
+  return '正しいメールアドレスを入力してください。パスワードには6〜12文字を含める必要があります';
 };
 const getFormValidMessage = () => {
-  return 'Press to log in';
+  return '入力情報でログインする';
 };
 
 const LoginPageFooter = ({ handleLogin, isFormValid }) => {
@@ -23,17 +23,21 @@ const LoginPageFooter = ({ handleLogin, isFormValid }) => {
       >
         <div>
           <CustomPrimaryButton
-            label="Log in"
-            additionalStyles={{ marginTop: '30px' }}
+            label="ログインする"
+            additionalStyles={{
+              fontSize: '13px',
+              fontWeight: '600',
+              marginTop: '30px',
+            }}
             disabled={!isFormValid}
             onClick={handleLogin}
           />
         </div>
       </Tooltip>
       <RedirectInfo
-        text="Need an account? "
-        redirectText="Create an account"
-        additionalStyles={{ marginTop: '5px' }}
+        text="アカウントが必要ですか？ "
+        redirectText="アカウントを作成する"
+        additionalStyles={{ fontSize: '12px', marginTop: '5px' }}
         redirectHandler={handlePushToRegisterPage}
       />
     </>

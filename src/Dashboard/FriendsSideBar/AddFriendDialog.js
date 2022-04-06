@@ -7,7 +7,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import { validateMail } from '../../shared/utils/validators';
 import InputWithLabel from '../../shared/components/InputWithLabel';
 import CustomPrimaryBottom from '../../shared/components/CustomPrimaryButton';
-import { Typography } from '@mui/material';
 
 const AddFriendDialog = ({
   isDialopOpen,
@@ -43,7 +42,7 @@ const AddFriendDialog = ({
           <InputWithLabel
             value={mail}
             setValue={setMail}
-            label="Mail"
+            label="E-MAIL ADDRESS"
             type="text"
             placeholder="メールアドレス"
           />

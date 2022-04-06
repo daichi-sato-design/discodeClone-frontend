@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { Tooltip } from '@mui/material';
 
 const getFormNotValidMessage = () => {
-  return 'Username should contains between 3 and 12 characters and password should contains between 6 and 12 character. Also correct e-mail address should provided';
+  return 'ユーザー名には3〜12文字、パスワードには6〜12文字を含める必要があります。 また、正しい電子メールアドレスを提供する必要があります';
 };
 const getFormValidMessage = () => {
-  return 'Press to Register!';
+  return '入力情報で登録する';
 };
 
 const RegisterPageFooter = ({ handleRegister, isFormValid }) => {
@@ -23,17 +23,21 @@ const RegisterPageFooter = ({ handleRegister, isFormValid }) => {
       >
         <div>
           <CustomPrimaryButton
-            label="Register"
-            additionalStyles={{ marginTop: '30px' }}
+            label="登録する"
+            additionalStyles={{
+              fontSize: '13px',
+              fontWeight: '600',
+              marginTop: '30px',
+            }}
             disabled={!isFormValid}
             onClick={handleRegister}
           />
         </div>
       </Tooltip>
       <RedirectInfo
-        text="Already have an account? "
-        redirectText="Log in"
-        additionalStyles={{ marginTop: '5px' }}
+        text="すでにアカウントをお持ちですか？ "
+        redirectText="ログイン"
+        additionalStyles={{ fontSize: '12px', marginTop: '5px' }}
         redirectHandler={handlePushToLoginPage}
       />
     </>
