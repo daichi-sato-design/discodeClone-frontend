@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { Button, Typography } from '@mui/material';
 import Avatar from '../../../shared/components/Avatar';
 import OnlineIndicator from './OnlineIndicator';
 
@@ -17,6 +16,8 @@ const FriendsListItem = ({ id, username, isOnline }) => {
         textTransform: 'none',
         color: '#000',
         position: 'relative',
+        borderRadius: 0,
+        boxSizing: 'border-box',
       }}
     >
       <Avatar username={username} large={false} />
