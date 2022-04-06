@@ -8,7 +8,7 @@ const FriendsTitle = ({ title }) => {
         textTransform: 'uppercase',
         color: '#8e9297',
         fontSize: '14px',
-        marginTop: '16px',
+        margin: '16px 0 8px',
       }}
     >
       {title}
