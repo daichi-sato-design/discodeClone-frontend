@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomPrimaryBottom from '../../shared/components/CustomPrimaryBottom';
+import CustomPrimaryButton from '../../shared/components/CustomPrimaryButton';
 import RedirectInfo from '../../shared/components/RedirectInfo';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip } from '@mui/material';
@@ -22,7 +22,7 @@ const RegisterPageFooter = ({ handleRegister, isFormValid }) => {
         title={!isFormValid ? getFormNotValidMessage() : getFormValidMessage()}
       >
         <div>
-          <CustomPrimaryBottom
+          <CustomPrimaryButton
             label="Register"
             additionalStyles={{ marginTop: '30px' }}
             disabled={!isFormValid}
