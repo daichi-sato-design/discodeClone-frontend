@@ -11,8 +11,8 @@ const AvatarPreview = styled('div')({
   justifyContent: 'center',
   fontSize: '16px',
   fontWeight: '600',
-  marginLeft: '5px',
   color: '#FFF',
+  flexShrink: 0,
 });
 
 const Avatar = ({ username, large }) => {

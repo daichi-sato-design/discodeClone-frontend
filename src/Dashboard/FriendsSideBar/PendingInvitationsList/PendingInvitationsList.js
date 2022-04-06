@@ -23,9 +23,10 @@ const MainContainer = styled('div')({
   width: '100%',
   height: '22%',
   display: 'flex',
+  flexShrink: 0,
   flexDirection: 'column',
   alignItems: 'center',
-  overflow: 'auto',
+  overflowY: 'auto',
 });
 
 const PendingInvitationsList = () => {

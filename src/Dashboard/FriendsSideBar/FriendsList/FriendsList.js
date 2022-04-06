@@ -23,6 +23,7 @@ const DUMMY_FRIENDS = [
 const MainContainer = styled('div')({
   flexGrow: 1,
   width: '100%',
+  overflowY: 'auto',
 });
 
 const FriendsList = () => {

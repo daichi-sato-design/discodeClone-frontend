@@ -9,7 +9,7 @@ const FriendsListItem = ({ id, username, isOnline }) => {
       style={{
         width: '100%',
         margin: '0',
-        padding: '4px 8px',
+        padding: '4px 28px 4px 12px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-start',
@@ -27,6 +27,8 @@ const FriendsListItem = ({ id, username, isOnline }) => {
           fontWeight: '600',
           color: '#8E9297',
           marginLeft: '8px',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
         }}
         variant={'subtitle1'}
         align="left"

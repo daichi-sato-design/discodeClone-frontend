@@ -10,6 +10,7 @@ const additionalStyles = {
   fontSize: '13px',
   fontWeight: '600',
   lineHeight: 1,
+  flexShrink: 0,
 };
 
 const AddFriendButton = () => {

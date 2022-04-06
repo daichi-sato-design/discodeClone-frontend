@@ -27,7 +27,7 @@ const PendingInvitationsListItem = ({
         <Box
           sx={{
             width: '100%',
-            padding: '4px 8px',
+            padding: '4px 8px 4px 12px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
