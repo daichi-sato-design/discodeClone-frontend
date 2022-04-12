@@ -1,23 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
+import {
+  Dialog,
+  DialogActions,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+} from '@mui/material';
 import { validateMail } from '../../shared/utils/validators';
 import InputWithLabel from '../../shared/components/InputWithLabel';
 import CustomPrimaryBottom from '../../shared/components/CustomPrimaryButton';
+import { connect } from 'react-redux';
+import { getActions } from '../../store/actions/friendsActions';
 
 const AddFriendDialog = ({
   isDialopOpen,
   closeDialogHandler,
-  sendFriendInvitation = () => {},
+  sendFriendInvitation,
 }) => {
   const [mail, setMail] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
 
   const handleSendInvitation = () => {
     // Send friend request to server
+    sendFriendInvitation({
+      mail,
+    });
   };
   const handleCloseDialog = () => {
     closeDialogHandler();
@@ -66,4 +73,10 @@ const AddFriendDialog = ({
   );
 };
 
-export default AddFriendDialog;
+const mapActionsToProps = (dispatch) => {
+  return {
+    ...getActions(dispatch),
+  };
+};
+
+export default connect(null, mapActionsToProps)(AddFriendDialog);
