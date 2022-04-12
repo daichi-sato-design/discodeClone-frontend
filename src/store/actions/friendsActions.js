@@ -19,7 +19,7 @@ const sendFriendInvitation = (data, closeDialogHandler) => {
     const respanse = await api.sendFriendInvitation(data);
 
     if (respanse.error) {
-      dispatch(openAlertMessage(respanse.exception?.respanse?.data));
+      dispatch(openAlertMessage(respanse.exception?.response?.data));
     } else {
       dispatch(openAlertMessage('フレンド申請が送信されました！'));
       closeDialogHandler();
