@@ -22,9 +22,12 @@ const AddFriendDialog = ({
 
   const handleSendInvitation = () => {
     // Send friend request to server
-    sendFriendInvitation({
-      mail,
-    });
+    sendFriendInvitation(
+      {
+        targetMailAddress: mail,
+      },
+      closeDialogHandler
+    );
   };
   const handleCloseDialog = () => {
     closeDialogHandler();
