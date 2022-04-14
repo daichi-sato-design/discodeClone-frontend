@@ -42,6 +42,11 @@ const PendingInvitationsListItem = ({
               fontWeight: '600',
               color: '#8E9297',
               flexGrow: 1,
+              whiteSpace: 'nowrap',
+              overflowX: 'hidden',
+              textOverflow: 'ellipsis',
+              WebkitTextOverflow: 'ellipsis',
+              OTextOverflow: 'ellipsis',
             }}
           >
             {username}
