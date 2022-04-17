@@ -11,6 +11,8 @@ export const getActions = (dispatch) => {
   return {
     sendFriendInvitation: (data, closeDialogHandler) =>
       dispatch(sendFriendInvitation(data, closeDialogHandler)),
+    acceptFriendInvitation: (data) => dispatch(acceptFriendInvitation(data)),
+    rejectFriendInvitation: (data) => dispatch(rejectFriendInvitation(data)),
   };
 };
 
@@ -30,6 +32,29 @@ const sendFriendInvitation = (data, closeDialogHandler) => {
     } else {
       dispatch(openAlertMessage('フレンド申請が送信されました！'));
       closeDialogHandler();
+    }
+  };
+};
+
+const acceptFriendInvitation = (data) => {
+  return async (dispatch) => {
+    const respanse = await api.acceptFriendInvitation(data);
+
+    if (respanse.error) {
+      dispatch(openAlertMessage(respanse.exception?.response?.data));
+    } else {
+      dispatch(openAlertMessage('フレンド申請を承認しました'));
+    }
+  };
+};
+const rejectFriendInvitation = (data) => {
+  return async (dispatch) => {
+    const respanse = await api.rejectFriendInvitation(data);
+
+    if (respanse.error) {
+      dispatch(openAlertMessage(respanse.exception?.response?.data));
+    } else {
+      dispatch(openAlertMessage('フレンド申請を拒否しました'));
     }
   };
 };

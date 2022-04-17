@@ -19,7 +19,11 @@ apiClient.interceptors.request.use(
   }
 );
 
-// public toutes
+// --------------- //
+//  PUBLIC ROUTES  //
+// --------------- //
+
+// ログイン
 export const login = async (data) => {
   try {
     return await apiClient.post('/auth/login', data);
@@ -30,6 +34,8 @@ export const login = async (data) => {
     };
   }
 };
+
+// 新規登録
 export const register = async (data) => {
   try {
     return await apiClient.post('/auth/register', data);
@@ -41,10 +47,40 @@ export const register = async (data) => {
   }
 };
 
-// secure toutes
+// --------------- //
+//  SECURE ROUTES  //
+// --------------- //
+
+// フレンド申請
 export const sendFriendInvitation = async (data) => {
   try {
     return await apiClient.post('/friend-invitation/invite', data);
+  } catch (exception) {
+    checkResponseCode(exception);
+    return {
+      error: true,
+      exception,
+    };
+  }
+};
+
+// フレンド申請の承認
+export const acceptFriendInvitation = async (data) => {
+  try {
+    return await apiClient.post('/friend-invitation/accept', data);
+  } catch (exception) {
+    checkResponseCode(exception);
+    return {
+      error: true,
+      exception,
+    };
+  }
+};
+
+// フレンド申請の拒否
+export const rejectFriendInvitation = async (data) => {
+  try {
+    return await apiClient.post('/friend-invitation/reject', data);
   } catch (exception) {
     checkResponseCode(exception);
     return {
