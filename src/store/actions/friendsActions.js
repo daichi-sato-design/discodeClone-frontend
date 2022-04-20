@@ -23,6 +23,13 @@ export const setPendingFriendsInvitations = (pendingFriendsInvitations) => {
   };
 };
 
+export const setFriends = (friends) => {
+  return {
+    type: friendActions.SET_FRIENDS,
+    friends,
+  };
+};
+
 const sendFriendInvitation = (data, closeDialogHandler) => {
   return async (dispatch) => {
     const respanse = await api.sendFriendInvitation(data);
@@ -47,6 +54,7 @@ const acceptFriendInvitation = (data) => {
     }
   };
 };
+
 const rejectFriendInvitation = (data) => {
   return async (dispatch) => {
     const respanse = await api.rejectFriendInvitation(data);

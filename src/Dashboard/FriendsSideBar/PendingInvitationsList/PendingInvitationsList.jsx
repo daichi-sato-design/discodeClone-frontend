@@ -16,7 +16,7 @@ const MainContainer = styled('div')({
 const PendingInvitationsList = ({ pendingFriendsInvitations }) => {
   return (
     <MainContainer>
-      {pendingFriendsInvitations.map((invitation) => (
+      {pendingFriendsInvitations?.map((invitation) => (
         <PendingInvitationsListItem
           key={invitation._id}
           id={invitation._id}
