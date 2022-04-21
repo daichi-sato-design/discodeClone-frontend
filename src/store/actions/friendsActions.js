@@ -37,7 +37,7 @@ const sendFriendInvitation = (data, closeDialogHandler) => {
     if (respanse.error) {
       dispatch(openAlertMessage(respanse.exception?.response?.data));
     } else {
-      dispatch(openAlertMessage('フレンド申請が送信されました！'));
+      dispatch(openAlertMessage('フレンド申請が送信されました'));
       closeDialogHandler();
     }
   };
