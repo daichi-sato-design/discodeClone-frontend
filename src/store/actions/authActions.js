@@ -26,7 +26,6 @@ const login = (userDetails, navigate) => {
     const response = await api.login(userDetails);
 
     if (response.error) {
-      // show error message in alert
       dispatch(openAlertMessage(response?.exception?.response?.data));
     } else {
       const { userDetails } = response?.data;
@@ -43,7 +42,6 @@ const register = (userDetails, navigate) => {
     const response = await api.register(userDetails);
 
     if (response.error) {
-      // show error message in alert
       dispatch(openAlertMessage(response?.exception?.response?.data));
     } else {
       const { userDetails } = response?.data;
