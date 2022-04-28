@@ -20,7 +20,7 @@ export const setChosenChatDetails = (chatDetails, type) => {
   return {
     type: chatActions.SET_CHOSEN_CHAT_DETAILS,
     chatType: type,
-    chatDetails,
+    chosenChatDetails: chatDetails,
   };
 };
 
